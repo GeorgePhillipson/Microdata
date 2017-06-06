@@ -1,0 +1,12 @@
+﻿@using Archetype.Extensions
+@using Archetype.Models
+@inherits UmbracoTemplatePage
+
+<h1>Products</h1>
+@Html.RenderArchetypePartials(Model.Content.GetPropertyValue<ArchetypeModel>("products"))
+
+<hr/>
+@{ Html.RenderAction("CommentsForm", "Home"); }
+
+<hr/>
+@{ Html.RenderAction("DisplayComments", "Home"); }

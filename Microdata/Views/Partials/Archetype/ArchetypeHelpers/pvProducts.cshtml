@@ -1,0 +1,22 @@
+﻿@inherits UmbracoViewPage<List<Microdata.Models.MicrodataModel>>
+
+<div class="container">
+    <div class="case-border">
+        <div class="row">
+            @foreach (var service in Model.ToList())
+            {
+                <div class="col-md-6">
+                    <section>
+                        <article class="service-border">
+                            <div itemscope itemtype="http://schema.org/Service">
+                                <h1 itemprop="name">@service.Title</h1>
+                                <p itemprop="description">@service.Description</p>
+                                <p><span itemprop="priceCurrency">@service.CurrencyCode</span><span itemprop="price">@service.ItemPrice</span></p>
+                            </div>
+                        </article>
+                    </section>
+                </div>
+            }
+        </div>
+    </div>
+</div>

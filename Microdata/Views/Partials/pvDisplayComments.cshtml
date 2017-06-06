@@ -1,0 +1,27 @@
+﻿@inherits UmbracoViewPage<List<Microdata.Models.DisplayCommentsModel>>
+
+<div class="container">
+    @if (Model.Any())
+    {
+        <div class="row">
+            <div class="col-md-12">
+
+                @foreach (var m in Model.ToList())
+                {
+                    <div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h4>
+                                    @m.MessageTitle
+                                </h4>
+                                <p>@Html.Raw(m.VisitorMessage)</p>
+                            </div>
+
+                        </div>
+                        <hr />
+                    </div>
+                }
+            </div>
+        </div>
+    }
+</div>
